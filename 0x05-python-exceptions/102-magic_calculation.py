@@ -2,6 +2,15 @@
 
 
 def magic_calculation(a, b):
+    """Simulate a specific bytecode's behavior in Python function.
+
+    Args:
+        a (int): The first input value.
+        b (int): The second input value.
+
+    Returns:
+        The result of calculations.
+    """
     result = 0
     for i in range(1, 3):
         try:
@@ -11,5 +20,5 @@ def magic_calculation(a, b):
                 result += a ** b / i
         except:
             result = b + a
-            break
-    return (result)
+
+    return result
