@@ -2,14 +2,14 @@
 
 
 def magic_calculation(a, b):
-    """Simulate a specific bytecode's behavior in Python function.
+    """Python function mimic given bytecode behavior.
 
     Args:
         a (int): The first input value.
         b (int): The second input value.
 
     Returns:
-        The result of calculations.
+        Result of calculation.
     """
     result = 0
     for i in range(1, 3):
