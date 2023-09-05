@@ -2,6 +2,8 @@
 
 def magic_string():
 """Get the word "BestSchool" n times in a string."""
+
+
     if hasattr(magic_string, 'calls'):
         magic_string.calls += 1
     else:
