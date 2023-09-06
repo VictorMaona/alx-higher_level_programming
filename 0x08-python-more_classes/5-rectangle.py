@@ -9,8 +9,8 @@ class Rectangle:
         """Start a new Rectangle.
 
         Args:
-            width (int): The the new rectangle width.
-            height (int): The the new rectangle height.
+            width (int): The new rectangle width.
+            height (int): The new rectangle height.
         """
         self.width = width
         self.height = height
@@ -38,7 +38,7 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError("height must be integer")
         if value < 0:
-            raise ValueError("the height must be >= 0")
+            raise ValueError("height must be greater >= 0")
         self.__height = value
 
     def area(self):
@@ -71,3 +71,7 @@ class Rectangle:
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
         return (rect)
+
+    def __del__(self):
+        """Every time a rectangle is deleted print a message.."""
+        print("Bye rectangle...")
