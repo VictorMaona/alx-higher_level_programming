@@ -32,9 +32,9 @@ class Rectangle:
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
-            raise TypeError("Obtain or modify the rectangle width")
+            raise TypeError("width must be an integer")
         if value < 0:
-            raise ValueError("width must exceed zero >= 0")
+            raise ValueError("width must be >= 0")
         self.__width = value
 
     @property
@@ -45,9 +45,9 @@ class Rectangle:
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
-            raise TypeError("An integer must represent height.")
+            raise TypeError("height must be an integer.")
         if value < 0:
-            raise ValueError("height must exceed zero >= 0")
+            raise ValueError("height must be >= 0")
         self.__height = value
 
     def area(self):
@@ -71,9 +71,9 @@ class Rectangle:
             TypeError: If rect_1 or rect_2 is not Rectangle.
         """
         if not isinstance(rect_1, Rectangle):
-            raise TypeError("rect_1 must be instance of Rectangle")
+            raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be instance of Rectangle")
+            raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() >= rect_2.area():
             return (rect_1)
         return (rect_2)
@@ -100,6 +100,6 @@ class Rectangle:
         return (rect)
 
     def __del__(self):
-        """Every time a rectangle is deleted, print a message."""
+        """Every time a rectangle is deleted print a message."""
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
