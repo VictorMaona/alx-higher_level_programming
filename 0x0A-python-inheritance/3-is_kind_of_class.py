@@ -9,7 +9,7 @@ def is_kind_of_class(obj, a_class):
         obj (any): checking the object.
         a_class (type): Matching the type of object class of obj.
     Returns:
-        If obj is a direct or indirect descendant of a_class If False then True.
+        If obj is a direct or indirect descendant of a_class otherwise False then True.
     """
     if isinstance(obj, a_class):
         return True
