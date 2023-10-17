@@ -1,5 +1,5 @@
--- Determine average temperature for each city and list in descending order of temperature.
-SELECT city, AVG(temperature) as avg_temp
-FROM temperatures
-GROUP BY city
-ORDER BY avg_temp DESC;
+-- Determine average temperature for city and list in order.
+SELECT `city`, AVG(`value`) AS `avg_temp`
+FROM `temperatures`
+GROUP BY `city`
+ORDER BY `avg_temp` DESC;
