@@ -1,7 +1,4 @@
 #!/usr/bin/node
-/**
- * Define the Rectangle class.
- */
 module.exports = class Rectangle {
   /**
    * The Rectangle class constructor.
