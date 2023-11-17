@@ -5,7 +5,7 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    # Verify that right amount of command line parameters is supplied.
+    # Verify that the correct number of command line parameters is supplied.
     if len(sys.argv) != 4:
         print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
         sys.exit(1)
@@ -20,8 +20,8 @@ if __name__ == "__main__":
         # Make object with cursor to communicate with the database.
         cursor = db.cursor()
 
-        # Run database query to choose the states whose names begin 'N'
-        query = 
+        # Run the database query to choose the states whose names begin with 'N'
+        query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY states.id"
         cursor.execute(query)
 
         # Retrieve every row.
@@ -40,7 +40,7 @@ if __name__ == "__main__":
         print("Error: {}".format(e))
 
     finally:
-        # Free resources end the database connection and cursor.
+        # Free resources, end the database connection and cursor.
         if cursor:
             cursor.close()
         if db:
