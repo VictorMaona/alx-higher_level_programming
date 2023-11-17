@@ -5,22 +5,22 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    # Check if the correct number of command-line arguments is provided
+    # Verify that right amount of command line parameters is supplied.
     if len(sys.argv) != 4:
         print("Usage: {} <username> <password> <database>".format(sys.argv[0]))
         sys.exit(1)
 
-    # Extract command-line arguments
+    # Convert command line parameters
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
 
     try:
-        # Connect to the MySQL database
+        # Link up with the database.
         db = MySQLdb.connect(host="localhost", user=username, passwd=password, db=database, port=3306)
 
-        # Create a cursor object to interact with the database
+        # Make object with cursor to communicate with the database.
         cursor = db.cursor()
 
-        # Execute the SQL query to select states with names starting with 'N' (case-sensitive)
+        # Run database query to choose the states whose names begin 'N'
         query = """
                 SELECT * FROM states
                 WHERE name LIKE BINARY 'N%'
@@ -28,23 +28,23 @@ if __name__ == "__main__":
                 """
         cursor.execute(query)
 
-        # Fetch all the rows
+        # Retrieve every row.
         rows = cursor.fetchall()
 
-        # Print the rows (states) one by one
+        # Print each row state individually.
         for row in rows:
             print(row)
 
     except MySQLdb.Error as e:
-        # Handle MySQL errors
+        # Address database issues
         print("MySQL Error: {}".format(e))
 
     except Exception as e:
-        # Handle other exceptions
+        # Address further exclusions
         print("Error: {}".format(e))
 
     finally:
-        # Close the cursor and database connection to release resources
+        # Free resources end the database connection and cursor.
         if cursor:
             cursor.close()
         if db:
