@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists states with a name starting with 'N' (case-sensitive) from the database hbtn_0e_0_usa"""
+"""  Establish connection to database and verify the number """
 
 import MySQLdb
 import sys
