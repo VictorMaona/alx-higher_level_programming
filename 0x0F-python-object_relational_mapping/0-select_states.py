@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""  Connecting to the MySQL database and importing the required modules """
+"""  Connecting to database and importing the required modules """
 import MySQLdb
 import sys
 
