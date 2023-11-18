@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""  lists all states from the database hbtn_0e_0_usa """
+"""  Connect to database and check correct arguments """
 import MySQLdb
 import sys
 
