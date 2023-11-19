@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-script that removes from the database hbtn_0e_6_usa all 
-'State' objects whose names begin with the letter a
+script that removes from the database all 
+'State' objects whose names begin with the letter
 """
 import sys
 from model_state import Base, State
