@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-script that removes from the database all 
-'State' objects whose names begin with the letter
+""" prints the State object with the name passed as argument from the database
 """
 import sys
 from model_state import Base, State
