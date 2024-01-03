@@ -1,13 +1,10 @@
 #!/usr/bin/node
 
-// FS module import for file system functions
 const fs = require('fs');
-const URL = process.argv[2];
+const file = process.argv[2];
+const string = process.argv[3];
 
-request(URL, function (err, response) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('code: ' + response.statusCode);
-  }
+// Verify that the string and file path are supplied.
+if (!file || !string) {
+  if (err) console.log(err);
 });
