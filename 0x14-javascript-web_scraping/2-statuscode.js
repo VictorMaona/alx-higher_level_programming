@@ -1,13 +1,10 @@
 #!/usr/bin/node
+// Verify whether the URL is given.
+const request = require('request');
 
-// FS module import for file system functions
-const fs = require('fs');
-const URL = process.argv[2];
-
-request(URL, function (err, response) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log('code: ' + response.statusCode);
+request(process.argv[2], function (error, response, body) {
+  if (error) {
+    console.error(error);
   }
+  console.log('code:', response && response.statusCode);
 });
