@@ -1,10 +1,13 @@
 #!/usr/bin/node
-
-const fs = require('fs');
-const file = process.argv[2];
-const string = process.argv[3];
-
 // Verify that the string and file path are supplied.
-if (!file || !string) {
-  if (err) console.log(err);
+const fs = require('fs');
+
+let filename = '';
+if (process.argv[2] !== undefined) {
+  filename = process.argv[2];
+}
+fs.writeFile(filename, process.argv[3], 'utf8', (err) => {
+  if (err) {
+    console.log(err);
+  }
 });
