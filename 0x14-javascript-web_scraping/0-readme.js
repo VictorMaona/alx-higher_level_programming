@@ -1,12 +1,13 @@
 #!/usr/bin/node
 
-const request = require('request');
-const URL = process.argv[2];
+// FS module import for file system functions
+const fs = require('fs');
+const file = process.argv[2];
 
-request(URL, function (err, response) {
+fs.readFile(file, 'utf-8', function (err, data) {
   if (err) {
     console.log(err);
   } else {
-    console.log('code: ' + response.statusCode);
+    console.log(data);
   }
 });
